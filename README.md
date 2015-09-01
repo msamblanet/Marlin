@@ -1,3 +1,7 @@
+** This is a personal branch/fork **  for me to maintain my printer settings for Marlin.
+It is not intended for merging back.
+For anybody interested, I am using a somewhat customized [Folger Tech RepRap 2020 Prusa i3](http://folgertech.com/collections/3d-printer-full-kits/products/folger-tech-reprap-2020-prusa-i3-full-aluminum-3d-printer-kit)
+
 # Marlin 3D Printer Firmware
 <img align="right" src="Documentation/Logo/Marlin%20Logo%20GitHub.png" />
 
