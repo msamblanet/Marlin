@@ -140,8 +140,8 @@
 //#define HEATER_BED_DUTY_CYCLE_DIVIDER 4
 
 // If you want the M105 heater power reported in watts, define the BED_WATTS, and (shared for all extruders) EXTRUDER_WATTS
-//#define EXTRUDER_WATTS (12.0*12.0/6.7) //  P=I^2/R
-//#define BED_WATTS (12.0*12.0/1.1)      // P=I^2/R
+#define EXTRUDER_WATTS (12.0*12.0/4.1) //  P=I^2/R
+#define BED_WATTS (28.4*28.4/5.45)      // P=I^2/R
 
 // PID settings:
 // Comment the following line to disable PID and enable bang-bang.
@@ -160,9 +160,10 @@
 
 // If you are using a pre-configured hotend then you can use one of the value sets by uncommenting it
 // Ultimaker
-    #define  DEFAULT_Kp 32.40
-    #define  DEFAULT_Ki 2.35
-    #define  DEFAULT_Kd 111.47
+// MRS 2015-09-06 Auto-PID using "M303 S175 C10" on stock hot-end
+    #define  DEFAULT_Kp 13.82
+    #define  DEFAULT_Ki 0.90
+    #define  DEFAULT_Kd 53.21
 
 // MakerGear
 //    #define  DEFAULT_Kp 7.0
