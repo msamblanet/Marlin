@@ -48,7 +48,7 @@
 #endif
 
 // Define this to set a custom name for your generic Mendel,
-// #define CUSTOM_MENDEL_NAME "This Mendel"
+#define CUSTOM_MENDEL_NAME "MRS-FTi3"
 
 // Define this to set a unique identifier for this printer, (Used by some programs to differentiate between machines)
 // You can use an online service to generate a random UUID. (eg http://www.uuidgenerator.net/version4)
@@ -129,7 +129,7 @@
 // When temperature exceeds max temp, your heater will be switched off.
 // This feature exists to protect your hotend from overheating accidentally, but *NOT* from thermistor short/failure!
 // You should use MINTEMP for thermistor short/failure protection.
-#define HEATER_0_MAXTEMP 270
+#define HEATER_0_MAXTEMP 220 // Heater thermister table is off - this represents about 240-245c
 #define HEATER_1_MAXTEMP 245
 #define HEATER_2_MAXTEMP 245
 #define BED_MAXTEMP 150
@@ -140,8 +140,8 @@
 //#define HEATER_BED_DUTY_CYCLE_DIVIDER 4
 
 // If you want the M105 heater power reported in watts, define the BED_WATTS, and (shared for all extruders) EXTRUDER_WATTS
-#define EXTRUDER_WATTS (12.0*12.0/4.1) //  P=I^2/R
-#define BED_WATTS (28.4*28.4/5.45)      // P=I^2/R
+#define EXTRUDER_WATTS (12.0*12.0/4.2) //  P=I^2/R
+#define BED_WATTS (24.0*24.0/3.2)      // P=I^2/R
 
 // PID settings:
 // Comment the following line to disable PID and enable bang-bang.
@@ -159,11 +159,20 @@
   #define PID_dT ((OVERSAMPLENR * 10.0)/(F_CPU / 64.0 / 256.0)) //sampling period of the temperature routine
 
 // If you are using a pre-configured hotend then you can use one of the value sets by uncommenting it
-// Ultimaker
+// MRS 2015-10-04 Auto-PID using "M303 S200 C10" on stock hot-end
+    #define  DEFAULT_Kp 23.69 //13.82
+    #define  DEFAULT_Ki 1.58 // 0.90
+    #define  DEFAULT_Kd 88.80 //53.21
+
 // MRS 2015-09-06 Auto-PID using "M303 S175 C10" on stock hot-end
-    #define  DEFAULT_Kp 13.82
-    #define  DEFAULT_Ki 0.90
-    #define  DEFAULT_Kd 53.21
+//    #define  DEFAULT_Kp 13.82
+//    #define  DEFAULT_Ki 0.90
+//    #define  DEFAULT_Kd 53.21
+
+// Ultimaker
+//    #define  DEFAULT_Kp 22.2
+//    #define  DEFAULT_Ki 1.08
+//    #define  DEFAULT_Kd 114
 
 // MakerGear
 //    #define  DEFAULT_Kp 7.0
